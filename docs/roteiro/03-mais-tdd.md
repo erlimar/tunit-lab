@@ -36,12 +36,12 @@ public class CriarTrilhaDeEstudoCommandHandler
 {
     public async Task HandleAsync(CriarTrilhaDeEstudoCommand command)
     {
-        if (string.IsNullOrEmpty(command.Titulo))
+        if (command.Titulo == null)
         {
             throw new ArgumentException("O título é obrigatório.");
         }
 
-        if (string.IsNullOrEmpty(command.Descricao))
+        if (command.Descricao == null)
         {
             throw new ArgumentException("A descrição é obrigatória.");
         }
@@ -86,12 +86,12 @@ public class CriarTrilhaDeEstudoCommandHandler
             throw new ArgumentNullException(nameof(command));
         }
 
-        if (string.IsNullOrEmpty(command.Titulo))
+        if (command.Titulo == null)
         {
             throw new ArgumentException("O título é obrigatório.");
         }
 
-        if (string.IsNullOrEmpty(command.Descricao))
+        if (command.Descricao == null)
         {
             throw new ArgumentException("A descrição é obrigatória.");
         }

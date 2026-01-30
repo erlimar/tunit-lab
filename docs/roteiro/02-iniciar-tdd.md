@@ -160,7 +160,7 @@ public class CriarTrilhaDeEstudoCommandHandler
 {
     public async Task HandleAsync(CriarTrilhaDeEstudoCommand command)
     {
-        if (string.IsNullOrEmpty(command.Titulo))
+        if (command.Titulo == null)
         {
             throw new ArgumentException("O título é obrigatório.");
         }
@@ -175,6 +175,7 @@ public class CriarTrilhaDeEstudoCommandHandler
 - Um projeto de testes TUnit é um simples projeto `console`
 - O comando `dotnet test` requer informar o _runner_ `Microsoft.Testing.Platform` em `global.json`
 - Executar testes assíncronos é o padrão em TUnit
-- Comece com um método não implementado `throw new NotImplementedException()`
+- Comece pelo código de teste, depois crie as outras classes, e os métodos não implementados
+  - Use `throw new NotImplementedException()` nos métodos não implementados
 - Use `Argument?Exception` para informar problemas com os argumentos das funções. Faz todo sentido.
 - Escrevo em português ou inglês? O teste deve refletir sua funcionalidade. Qual o nome dela?
