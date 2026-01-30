@@ -77,6 +77,7 @@ dotnet run     # ok
 
 # Novidades importantes
 
+- Uso de `global.json` para fixar a versão do .NET SDK usado no projeto
 - Novo arquivo de soluções `.slnx` muito mais simples e legível
 - Projeto de teste menos complexo que (NUnit, xUnit.net, MSTest)
   - https://xunit.net/docs/getting-started/v3/getting-started
