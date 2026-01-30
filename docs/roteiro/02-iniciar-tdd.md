@@ -172,7 +172,10 @@ public class CriarTrilhaDeEstudoCommandHandler
 
 # Novidades importantes
 
-- Um projeto de testes TUnit é um simples projeto `console`
+- Projeto de teste menos complexo que (NUnit, xUnit.net, MSTest), TUnit é um simples projeto `console`
+  - https://xunit.net/docs/getting-started/v3/getting-started
+  - https://docs.nunit.org/articles/nunit/getting-started/installation.html
+
 - O comando `dotnet test` requer informar o _runner_ `Microsoft.Testing.Platform` em `global.json`
 - Executar testes assíncronos é o padrão em TUnit
 - Comece pelo código de teste, depois crie as outras classes, e os métodos não implementados
