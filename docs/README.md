@@ -1,6 +1,7 @@
 # Roteiro
 
 1. [Criar projeto](roteiro/01-criar-projeto.md)
+2. [Iniciar com TDD](roteiro/02-iniciar-tdd.md)
 
 # Links úteis
 
@@ -12,3 +13,6 @@
 - [Testes no .NET](https://learn.microsoft.com/pt-br/dotnet/core/testing/)
 - [Visão geral do Microsoft.Testing.Platform](https://learn.microsoft.com/pt-br/dotnet/core/testing/microsoft-testing-platform-intro)
 - [Migrar do VSTest para Microsoft.Testing.Platform](https://learn.microsoft.com/pt-br/dotnet/core/testing/migrating-vstest-microsoft-testing-platform)
+- [Testar com o "teste dotnet"](https://learn.microsoft.com/pt-br/dotnet/core/testing/unit-testing-with-dotnet-test)
+- [TDD (Test Driven Development)](https://martinfowler.com/bliki/TestDrivenDevelopment.html)
+

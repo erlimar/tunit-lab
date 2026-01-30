@@ -7,4 +7,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="TUnit" Version="1.12.93" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\Application\TUnitLab.Application.csproj" />
+  </ItemGroup>
+
 </Project>
