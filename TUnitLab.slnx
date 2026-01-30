@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/Application/">
+    <Project Path="src/Application/TUnitLab.Application.csproj" />
+  </Folder>
+  <Folder Name="/test/" />
+  <Folder Name="/test/ApplicationTests/">
+    <Project Path="test/ApplicationTests/TUnitLab.ApplicationTests.csproj" />
+  </Folder>
+</Solution>
