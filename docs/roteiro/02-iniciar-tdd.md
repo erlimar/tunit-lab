@@ -67,10 +67,8 @@ dotnet run
 
    Engine Mode: SourceGenerated
 ```
-```
-```
 
-Corrigindo comando `dotnet test`:
+Corrigindo comando `dotnet test` (https://aka.ms/dotnet-test-mtp-error):
 
 ```diff
 {
@@ -88,8 +86,6 @@ Corrigindo comando `dotnet test`:
 dotnet test  # ok
 ```
 
-```
-```
 3) Usar TDD para "Título e descrição são obrigatórios"
 
 Façamos "uma coisa de cada vez"
@@ -173,3 +169,12 @@ public class CriarTrilhaDeEstudoCommandHandler
     }
 }
 ```
+
+# Novidades importantes
+
+- Um projeto de testes TUnit é um simples projeto `console`
+- O comando `dotnet test` requer informar o _runner_ `Microsoft.Testing.Platform` em `global.json`
+- Executar testes assíncronos é o padrão em TUnit
+- Comece com um método não implementado `throw new NotImplementedException()`
+- Use `Argument?Exception` para informar problemas com os argumentos das funções. Faz todo sentido.
+- Escrevo em português ou inglês? O teste deve refletir sua funcionalidade. Qual o nome dela?

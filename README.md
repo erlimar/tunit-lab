@@ -2,7 +2,7 @@
 
 
 Acompanhe o [roteiro](docs/README.md) e veja o exemplo de como criar
-testes unitários para projetos .NET usando o framework [TUnit](https://tunit.dev).
+testes unitários para projetos .NET usando [TUnit](https://tunit.dev).
 
 ![](tunit-banner.webp)
 
