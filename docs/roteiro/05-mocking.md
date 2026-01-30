@@ -206,3 +206,5 @@ public class CriarTrilhaDeEstudoCommandHandler
 
 # Novidades importantes
 
+- A biblioteca Moq nos ajuda com _fakes_, _stubs_ e _mocks_
+- É comum escrever mais código de teste do que código funcional
