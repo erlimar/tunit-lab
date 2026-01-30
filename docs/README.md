@@ -4,6 +4,7 @@
 2. [Iniciar com TDD](roteiro/02-iniciar-tdd.md)
 3. [Mais TDD](roteiro/03-mais-tdd.md)
 4. [Refatoração](roteiro/04-refatoracao.md)
+5. [Mocking](roteiro/05-mocking.md)
 
 # Links úteis
 
@@ -17,4 +18,5 @@
 - [Migrar do VSTest para Microsoft.Testing.Platform](https://learn.microsoft.com/pt-br/dotnet/core/testing/migrating-vstest-microsoft-testing-platform)
 - [Testar com o "teste dotnet"](https://learn.microsoft.com/pt-br/dotnet/core/testing/unit-testing-with-dotnet-test)
 - [TDD (Test Driven Development)](https://martinfowler.com/bliki/TestDrivenDevelopment.html)
-
+- [Práticas recomendadas de teste de unidade para .NET](https://learn.microsoft.com/pt-br/dotnet/core/testing/unit-testing-best-practices)
+- [Biblioteca Moq](https://github.com/devlooped/moq)
