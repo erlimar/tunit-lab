@@ -1,8 +1,8 @@
 # Mais TDD
 
-1) Continuar o clico TDD para "Título e descrição são obrigatórios"
+Continuando o clico TDD para "Título e descrição são obrigatórios"
 
-Primeiro teste falha **(RED)**:
+1) Mais um teste falho **(RED)**:
 
 ```cs
 // test/ApplicationTests/CriarTrilhaDeEstudoCommandTest.cs
@@ -28,7 +28,7 @@ public class CriarTrilhaDeEstudoCommandTest
 }
 ```
 
-Implementamos versão funcional para passar **(GREEN)**:
+2) Mais uma implementação funcional para passar **(GREEN)**:
 
 ```cs
 // src/Application/CriarTrilhaDeEstudoCommandHandler.cs
@@ -51,7 +51,7 @@ public class CriarTrilhaDeEstudoCommandHandler
 }
 ```
 
-Mais um teste falho **(RED)**, que muitos deixam passar _desapercebidamente_:
+3) Mais um teste falho **(RED)**, que muitos deixam passar _desapercebidamente_:
 
 ```cs
 // test/ApplicationTests/CriarTrilhaDeEstudoCommandTest.cs
@@ -73,7 +73,7 @@ public class CriarTrilhaDeEstudoCommandTest
 }
 ```
 
-Implementamos versão funcional para passar **(GREEN)**:
+4) E mais uma implementação funcional para passar **(GREEN)**:
 
 ```cs
 // src/Application/CriarTrilhaDeEstudoCommandHandler.cs
@@ -103,4 +103,7 @@ public class CriarTrilhaDeEstudoCommandHandler
 
 # Novidades importantes
 
+- Escrever o teste antes do código é cultural, e seu cérebro já funciona assim.
+  - Só é necessário disciplina para entrar no ritmo
+  - A dica? Ao invés de "pensar & fazer", "pense escrevendo" e se tornará muscular
 - `ArgumentException` é diferente de `ArgumentNullException`
