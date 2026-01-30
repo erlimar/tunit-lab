@@ -5,23 +5,29 @@ namespace TUnitLab.ApplicationTests;
 public class CriarTrilhaDeEstudoCommandTest
 {
     [Test]
-    public async Task TituloEhObrigatorio()
+    [Arguments(null)]
+    [Arguments("")]
+    [Arguments("      ")]
+    public async Task TituloEhObrigatorio(string? tituloInvalido)
     {
         var handler = new CriarTrilhaDeEstudoCommandHandler(/* dependencies */);
 
         var exception = await Assert.ThrowsAsync<ArgumentException>(
             () => handler.HandleAsync(new CriarTrilhaDeEstudoCommand
             {
-                Titulo = null!,
+                Titulo = tituloInvalido!,
                 Descricao = "Descricao válida"
             })
         );
 
-        await Assert.That(exception!.Message).IsEqualTo("O título é obrigatório.");
+        await Assert.That(exception!.ParamName).IsEqualTo(nameof(CriarTrilhaDeEstudoCommand.Titulo));
     }
 
     [Test]
-    public async Task DescricaoEhObrigatoria()
+    [Arguments(null)]
+    [Arguments("")]
+    [Arguments("      ")]
+    public async Task DescricaoEhObrigatoria(string? descricaoInvalida)
     {
         var handler = new CriarTrilhaDeEstudoCommandHandler(/* dependencies */);
 
@@ -29,11 +35,11 @@ public class CriarTrilhaDeEstudoCommandTest
             () => handler.HandleAsync(new CriarTrilhaDeEstudoCommand
             {
                 Titulo = "Título válido",
-                Descricao = null!
+                Descricao = descricaoInvalida!
             })
         );
 
-        await Assert.That(exception!.Message).IsEqualTo("A descrição é obrigatória.");
+        await Assert.That(exception!.ParamName).IsEqualTo(nameof(CriarTrilhaDeEstudoCommand.Descricao));
     }
 
     [Test]

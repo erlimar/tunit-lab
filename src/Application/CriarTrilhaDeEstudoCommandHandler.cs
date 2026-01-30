@@ -4,20 +4,9 @@ public class CriarTrilhaDeEstudoCommandHandler
 {
     public async Task HandleAsync(CriarTrilhaDeEstudoCommand command)
     {
-        if (command == null)
-        {
-            throw new ArgumentNullException(nameof(command));
-        }
-
-        if (command.Titulo == null)
-        {
-            throw new ArgumentException("O título é obrigatório.");
-        }
-
-        if (command.Descricao == null)
-        {
-            throw new ArgumentException("A descrição é obrigatória.");
-        }
+        ArgumentNullException.ThrowIfNull(command, nameof(command));
+        ArgumentException.ThrowIfNullOrWhiteSpace(command.Titulo, nameof(command.Titulo));
+        ArgumentException.ThrowIfNullOrWhiteSpace(command.Descricao, nameof(command.Descricao));
 
         throw new NotImplementedException();
     }
