@@ -2,6 +2,7 @@
 
 1. [Criar projeto](roteiro/01-criar-projeto.md)
 2. [Iniciar com TDD](roteiro/02-iniciar-tdd.md)
+3. [Mais TDD](roteiro/03-mais-tdd.md)
 
 # Links úteis
 

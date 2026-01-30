@@ -101,7 +101,7 @@ namespace TUnitLab.ApplicationTests;
 public class CriarTrilhaDeEstudoCommandTest
 {
     [Test]
-    public async Task TituloEhObrigatorioAoCriar()
+    public async Task TituloEhObrigatorio()
     {
         var handler = new CriarTrilhaDeEstudoCommandHandler(/* dependencies */);
 
@@ -150,7 +150,7 @@ public class CriarTrilhaDeEstudoCommandHandler
 }
 ```
 
-Implementamos versão inicial da funcionalidade para passar **(GREEN)**:
+Implementamos versão funcional para passar **(GREEN)**:
 
 ```cs
 // src/Application/CriarTrilhaDeEstudoCommandHandler.cs
