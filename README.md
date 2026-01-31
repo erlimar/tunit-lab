@@ -1,8 +1,20 @@
 # Testes unitários .NET usando TUnit
 
 
-Acompanhe o [roteiro](docs/README.md) e veja o exemplo de como criar
-testes unitários para projetos .NET usando [TUnit](https://tunit.dev).
+Este repositório é um projeto de exemplo quanto a criar testes unitários .NET
+usando o framework [TUnit](https://tunit.dev). Mas também é uma
+[documentação](docs/README.md) passo a passo para que você possa aprender
+a fazê-lo.
+
+Seguindo esta documentação você conseguirá reproduzir o projeto como está,
+além de aprender na prática sobre:
+
+- [TDD (Test Driven Development)](https://martinfowler.com/bliki/TestDrivenDevelopment.html)
+- [TUnit](https://tunit.dev)
+- [Testes no .NET](https://learn.microsoft.com/pt-br/dotnet/core/testing/)
+- [Visão geral do Microsoft.Testing.Platform](https://learn.microsoft.com/pt-br/dotnet/core/testing/microsoft-testing-platform-intro)
+- [New, Simpler Solution File Format](https://devblogs.microsoft.com/visualstudio/new-simpler-solution-file-format/)
+- [Biblioteca Moq](https://github.com/devlooped/moq)
 
 ![](tunit-banner.webp)
 
