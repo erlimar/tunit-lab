@@ -22,7 +22,6 @@ cat TUnitLab.ApplicationTests.csproj <<EOF
 
 </Project>
 EOF
-
 ```
 
 2) O projeto de teste agora tem algumas mudanças:
@@ -123,18 +122,8 @@ Criamos as classes desejadas, para pelo menos compilar, mas ainda falhando **(RE
 ```sh
 rm src/Application/Class1.cs
 
-dotnet reference --project test/ApplicationTests/TUnitLab.ApplicationTests.csproj add src/Application/TUnitLab.Application.csproj
-```
-
-```cs
-// src/Application/CriarTrilhaDeEstudoCommand.cs
-namespace TUnitLab.Application;
-
-public class CriarTrilhaDeEstudoCommand
-{
-    public string Titulo { get; set; } = null!;
-    public string Descricao { get; set; } = null!;
-}
+cd test/ApplicationTests
+dotnet add reference ../../src/Application/TUnitLab.Application.csproj
 ```
 
 ```cs
@@ -147,6 +136,17 @@ public class CriarTrilhaDeEstudoCommandHandler
     {
         throw new NotImplementedException();
     }
+}
+```
+
+```cs
+// src/Application/CriarTrilhaDeEstudoCommand.cs
+namespace TUnitLab.Application;
+
+public class CriarTrilhaDeEstudoCommand
+{
+    public string Titulo { get; set; } = null!;
+    public string Descricao { get; set; } = null!;
 }
 ```
 

@@ -15,8 +15,6 @@ dotnet new .editorconfig
 mkdir src
 mkdir test
 ```
-```
-```
 
 3) Projetos e solução:
 
