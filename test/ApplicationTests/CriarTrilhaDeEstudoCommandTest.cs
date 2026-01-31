@@ -72,7 +72,12 @@ public class CriarTrilhaDeEstudoCommandTest
     [Test]
     public async Task ComandoValidoDeveGravarNoBanco()
     {
+        TrilhaDeEstudo? dbInsertedRecord = null;
+
         var mock = new Mock<ITrilhaDeEstudoRepository>();
+
+        mock.Setup(m => m.GravarNovoAsync(It.IsAny<TrilhaDeEstudo>()))
+            .Callback<TrilhaDeEstudo>(t => dbInsertedRecord = t);
 
         var handler = new CriarTrilhaDeEstudoCommandHandler(mock.Object);
 
@@ -84,6 +89,9 @@ public class CriarTrilhaDeEstudoCommandTest
 
         await handler.HandleAsync(command);
 
-        mock.Verify(r => r.GravarNovoAsync(It.IsAny<TrilhaDeEstudo>()), Times.AtMostOnce());
+        await Assert.That(dbInsertedRecord).IsNotNull();
+        await Assert.That(dbInsertedRecord!.Titulo).IsEqualTo(command.Titulo);
+        await Assert.That(dbInsertedRecord!.Descricao).IsEqualTo(command.Descricao);
     }
+
 }

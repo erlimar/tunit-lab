@@ -15,6 +15,10 @@ public class CriarTrilhaDeEstudoCommandHandler
         ArgumentException.ThrowIfNullOrWhiteSpace(command.Titulo, nameof(command.Titulo));
         ArgumentException.ThrowIfNullOrWhiteSpace(command.Descricao, nameof(command.Descricao));
 
-        await _repository.GravarNovoAsync(new TrilhaDeEstudo());
+        await _repository.GravarNovoAsync(new TrilhaDeEstudo
+        {
+            Titulo = command.Titulo,
+            Descricao = command.Descricao
+        });
     }
 }

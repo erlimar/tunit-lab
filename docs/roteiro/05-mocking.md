@@ -204,7 +204,78 @@ public class CriarTrilhaDeEstudoCommandHandler
 }
 ```
 
+8) Melhorar o teste (**RED**):
+
+Estamos apenas verificando se o método de gravação no banco foi chamado, mas não
+verificamos se os dados enviados estão conforme esperado.
+
+Então precisamos configurar nosso objeto simulado (mock) para simular a chamada
+do método, e para isso vamos observar qual objeto foi tentado incluir no banco,
+e então podemos verificá-lo em seguida.
+
+Com a nova verificação, vemos que o teste falha e precisa ser corrigido.
+
+```cs
+// test/ApplicationTests/CriarTrilhaDeEstudoCommandTest.cs
+public class CriarTrilhaDeEstudoCommandTest
+{
+    // ...
+
+    [Test]
+    public async Task ComandoValidoDeveGravarNoBanco()
+    {
+        TrilhaDeEstudo? dbInsertedRecord = null;
+
+        var mock = new Mock<ITrilhaDeEstudoRepository>();
+
+        mock.Setup(m => m.GravarNovoAsync(It.IsAny<TrilhaDeEstudo>()))
+            .Callback<TrilhaDeEstudo>(t => dbInsertedRecord = t);
+
+        var handler = new CriarTrilhaDeEstudoCommandHandler(mock.Object);
+
+        var command = new CriarTrilhaDeEstudoCommand
+        {
+            Titulo = "Título válido",
+            Descricao = "Descrição válida"
+        };
+
+        await handler.HandleAsync(command);
+
+        await Assert.That(dbInsertedRecord).IsNotNull();
+        await Assert.That(dbInsertedRecord!.Titulo).IsEqualTo(command.Titulo);
+        await Assert.That(dbInsertedRecord!.Descricao).IsEqualTo(command.Descricao);
+    }
+}
+```
+
+9) Agora sim, uma última implementação e tudo passa de verdade (**GREEN**):
+
+```cs
+// src/Application/CriarTrilhaDeEstudoCommandHandler.cs
+
+public class CriarTrilhaDeEstudoCommandHandler
+{
+    // ...
+
+    public async Task HandleAsync(CriarTrilhaDeEstudoCommand command)
+    {
+        ArgumentNullException.ThrowIfNull(command, nameof(command));
+        ArgumentException.ThrowIfNullOrWhiteSpace(command.Titulo, nameof(command.Titulo));
+        ArgumentException.ThrowIfNullOrWhiteSpace(command.Descricao, nameof(command.Descricao));
+
+        await _repository.GravarNovoAsync(new TrilhaDeEstudo
+        {
+            Titulo = command.Titulo,
+            Descricao = command.Descricao
+        });
+    }
+}
+```
+
 # Novidades importantes
 
 - A biblioteca Moq nos ajuda com _fakes_, _stubs_ e _mocks_
+- Trabalhar com objetos simulados pode ser uma tarefa muito árdua
+  - Fazê-la a mão pode custar mais tempo simulando do que de fato testando
+  - Usar uma biblioteca como Moq é essencial
 - É comum escrever mais código de teste do que código funcional
